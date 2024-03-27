@@ -1,7 +1,3 @@
-// let inputnumber1 = document.getElementById("btn1")
-// let inputnumber2 = document.getElementById("btn2")
-// let gobtn1 = document.getElementById("btn12")
-// let gobtn2 = document.getElementById("btn22")
 let pbox1 = document.getElementById("playbox1")
 let pbox2 = document.getElementById("playbox2")
 let pbox3 = document.getElementById("playbox3")
@@ -12,239 +8,234 @@ let pbox7 = document.getElementById("playbox7")
 let pbox8 = document.getElementById("playbox8")
 let pbox9 = document.getElementById("playbox9")
 let pboxs = document.querySelectorAll(".child2grid");
+let bton1 = document.getElementById('btnp1')
+let bton2 = document.getElementById('btnp2')
+let bton3 = document.getElementById('btnp3')
+let bton4 = document.getElementById('btnp4')
+let bton5 = document.getElementById('btnp5')
+let bton6 = document.getElementById('btnp6')
+let bton7 = document.getElementById('btnp7')
+let bton8 = document.getElementById('btnp8')
+let bton9 = document.getElementById('btnp9')
+let buttonsele = document.querySelectorAll('.btnes')
+let flag = ''
+let gamedata = []
+let Owin = 'O WINNER!!!';
+let Xwin = "X WINNER!!!";
+
+function checkwnr(){
+ if (
+   gamedata.includes("1O") &&
+   gamedata.includes("2O") &&
+   gamedata.includes("3O")
+ )alert(Owin)
+ else if (
+   gamedata.includes("1X") &&
+   gamedata.includes("2X") &&
+   gamedata.includes("3X")
+ )alert(Xwin)
+ else if (
+   gamedata.includes("1O") &&
+   gamedata.includes("4O") &&
+   gamedata.includes("7O")
+ )alert(Owin)
+ else if (
+   gamedata.includes("1X") &&
+   gamedata.includes("4X") &&
+   gamedata.includes("7X")
+ )alert(Xwin)
+ else if (
+   gamedata.includes("2O") &&
+   gamedata.includes("5O") &&
+   gamedata.includes("8O")
+ )alert(Owin)
+ else if (
+   gamedata.includes("2X") &&
+   gamedata.includes("5X") &&
+   gamedata.includes("8X")
+ )alert(Xwin)
+ else if (
+   gamedata.includes("3O") &&
+   gamedata.includes("6O") &&
+   gamedata.includes("9O")
+ )alert(Owin)
+ else if (
+   gamedata.includes("3X") &&
+   gamedata.includes("6X") &&
+   gamedata.includes("9X")
+ )alert(Xwin)
+ else if (
+   gamedata.includes("4O") &&
+   gamedata.includes("5O") &&
+   gamedata.includes("6O")
+ )alert(Owin)
+ else if (
+   gamedata.includes("4X") &&
+   gamedata.includes("5X") &&
+   gamedata.includes("6X")
+ )alert(Xwin)
+ else if (
+   gamedata.includes("7O") &&
+   gamedata.includes("8O") &&
+   gamedata.includes("9O")
+ )alert(Owin)
+ else if (
+   gamedata.includes("7X") &&
+   gamedata.includes("8X") &&
+   gamedata.includes("9X")
+ )alert(Xwin)
+ else if (
+   gamedata.includes("1O") &&
+   gamedata.includes("5O") &&
+   gamedata.includes("9O")
+ )alert(Owin)
+ else if (
+   gamedata.includes("1X") &&
+   gamedata.includes("5X") &&
+   gamedata.includes("9X")
+ )alert(Xwin)
+ else if (
+   gamedata.includes("3O") &&
+   gamedata.includes("5O") &&
+   gamedata.includes("7O")
+ )alert(Owin)
+ else if (
+   gamedata.includes("3X") &&
+   gamedata.includes("5X") &&
+   gamedata.includes("7X")
+ )alert(Xwin)
+}
+
+function transfer(bts) {
+
+  let creates = document.createElement("i");
+  creates.className = "fa-regular fa-circle";
+  bts.appendChild(creates);
+  gamedata.push(flag + "O")
+  // console.log(gamedata)
+  flag = ''
+  checkwnr();
+  
+ 
+}
+function transfer2(bts) {
+
+    let creates = document.createElement("i");
+    creates.className = "fa-solid fa-xmark";
+    bts.appendChild(creates);
+    gamedata.push(flag + "X");
+    // console.log(gamedata);
+    flag = "";
+    checkwnr();
+    
+  
+}
+pboxs.forEach((box2) => {
+  box2.addEventListener("click", () => {
+    if (box2 === pbox1){
+      bton1.click()
+    }else if(box2 === pbox2)bton2.click()
+    else if(box2 === pbox3)bton3.click()
+    else if(box2 === pbox4)bton4.click()
+    else if(box2 === pbox5)bton5.click()
+    else if(box2 === pbox6)bton6.click()
+    else if(box2 === pbox7)bton7.click()
+    else if(box2 === pbox8)bton8.click()
+    else if(box2 === pbox9)bton9.click()
+  })
+})
 
 
 let clip = 1;
-pboxs.forEach((box) => {
+
+buttonsele.forEach((box) => {
   box.addEventListener("click", () =>{
-    if(clip === 1){
+  if(clip === 1){
       clip = 2;
-      let creates = document.createElement("i");
-      creates.className = "fa-regular fa-circle";
-      box.appendChild(creates);
+      
+        if (box === bton1) {
+          flag = 1;
+          transfer(pbox1);
+           bton1.disabled = true;
+        } else if (box === bton2) {
+          flag = 2;
+          transfer(pbox2);
+          bton2.disabled = true;
+        } else if (box === bton3) {
+          flag = 3;
+          transfer(pbox3);
+          bton3.disabled = true;
+        } else if (box === bton4) {
+          flag = 4;
+          transfer(pbox4);
+          bton4.disabled = true;
+        } else if (box === bton5) {
+          flag = 5;
+          transfer(pbox5);
+          bton5.disabled = true;
+        } else if (box === bton6) {
+          flag = 6;
+          transfer(pbox6);
+          bton6.disabled = true;
+        } else if (box === bton7) {
+          flag = 7;
+          transfer(pbox7);
+          bton7.disabled = true;
+        } else if (box === bton8) {
+          flag = 8;
+          transfer(pbox8);
+          bton8.disabled = true;
+        } else if (box === bton9) {
+          flag = 9;
+          transfer(pbox9);
+          bton9.disabled = true;
+        }
     }else{
+      if (box === bton1) {
+        flag = 1;
+        transfer2(pbox1);
+        bton1.disabled = true;
+      } else if (box === bton2) {
+        flag = 2;
+        transfer2(pbox2);
+        bton2.disabled = true;
+      } else if (box === bton3) {
+        flag = 3;
+        transfer2(pbox3);
+        bton3.disabled = true;
+      } else if (box === bton4) {
+        flag = 4;
+        transfer2(pbox4);
+        bton4.disabled = true;
+      } else if (box === bton5) {
+        flag = 5;
+        transfer2(pbox5);
+        bton5.disabled = true;
+      } else if (box === bton6) {
+        flag = 6;
+        transfer2(pbox6);
+        bton6.disabled = true;
+      } else if (box === bton7) {
+        flag = 7;
+        transfer2(pbox7);
+        bton7.disabled = true;
+      } else if (box === bton8) {
+        flag = 8;
+        transfer2(pbox8);
+        bton8.disabled = true;
+      } else if (box === bton9) {
+        flag = 9;
+        transfer2(pbox9);
+        bton9.disabled = true;
+      }
       clip = 1;
-      let creates = document.createElement("i");
-      creates.className = "fa-solid fa-xmark";
-      box.appendChild(creates);
+      
     }
+
   })
 })
 
 
 
-
-
-// pbox1.addEventListener("dblclick", function () {
-//   let creates = document.createElement("i");
-//   creates.className = "fa-regular fa-circle";
-//   pbox1.appendChild(creates);
-// });
-// pbox2.addEventListener("dblclick", function () {
-//   let creates = document.createElement("i");
-//   creates.className = "fa-regular fa-circle";
-//   pbox2.appendChild(creates);
-// });
-// pbox3.addEventListener("dblclick", function () {
-//   let creates = document.createElement("i");
-//   creates.className = "fa-regular fa-circle";
-//   pbox3.appendChild(creates);
-// });
-// pbox4.addEventListener("dblclick", function () {
-//   let creates = document.createElement("i");
-//   creates.className = "fa-regular fa-circle";
-//   pbox4.appendChild(creates);
-// });
-// pbox5.addEventListener("dblclick", function () {
-//   let creates = document.createElement("i");
-//   creates.className = "fa-regular fa-circle";
-//   pbox5.appendChild(creates);
-// });
-// pbox6.addEventListener("dblclick", function () {
-//   let creates = document.createElement("i");
-//   creates.className = "fa-regular fa-circle";
-//   pbox6.appendChild(creates);
-// });
-// pbox7.addEventListener("dblclick", function () {
-//   let creates = document.createElement("i");
-//   creates.className = "fa-regular fa-circle";
-//   pbox7.appendChild(creates);
-// });
-// pbox8.addEventListener("dblclick", function () {
-//   let creates = document.createElement("i");
-//   creates.className = "fa-regular fa-circle";
-//   pbox8.appendChild(creates);
-// });
-// pbox9.addEventListener("dblclick", function () {
-//   let creates = document.createElement("i");
-//   creates.className = "fa-regular fa-circle";
-//   pbox9.appendChild(creates);
-// });
-
-
-//     pbox1.addEventListener("sglclick", function () {
-//       let creates = document.createElement("i");
-//       creates.className = "fa-solid fa-xmark";
-//       pbox1.appendChild(creates);
-//     });
-//     pbox2.addEventListener("singleclick", function () {
-//       let creates = document.createElement("i");
-//       creates.className = "fa-solid fa-xmark";
-//       pbox2.appendChild(creates);
-//     });
-//     pbox3.addEventListener("singleclick", function () {
-//       let creates = document.createElement("i");
-//       creates.className = "fa-solid fa-xmark";
-//       pbox3.appendChild(creates);
-//     });
-//     pbox4.addEventListener("singleclick", function () {
-//       let creates = document.createElement("i");
-//       creates.className = "fa-solid fa-xmark";
-//       pbox4.appendChild(creates);
-//     });
-//     pbox5.addEventListener("singleclick", function () {
-//       let creates = document.createElement("i");
-//       creates.className = "fa-solid fa-xmark";
-//       pbox5.appendChild(creates);
-//     });
-//     pbox6.addEventListener("singleclick", function () {
-//       let creates = document.createElement("i");
-//       creates.className = "fa-solid fa-xmark";
-//       pbox6.appendChild(creates);
-//     });
-//     pbox7.addEventListener("singleclick", function () {
-//       let creates = document.createElement("i");
-//       creates.className = "fa-solid fa-xmark";
-//       pbox7.appendChild(creates);
-//     });
-//     pbox8.addEventListener("singleclick", function () {
-//       let creates = document.createElement("i");
-//       creates.className = "fa-solid fa-xmark";
-//       pbox8.appendChild(creates);
-//     });
-//     pbox9.addEventListener("singleclick", function () {
-//       let creates = document.createElement("i");
-//       creates.className = "fa-solid fa-xmark";
-//       pbox9.appendChild(creates);
-//     });
-  
-
-
-
-
-// gobtn1.addEventListener("click",function(){
-//     if(inputnumber1.value == 1){
-//         let createO = document.createElement("i");
-//         createO.className = "fa-regular fa-circle";
-//         pbox1.appendChild(createO)
-//         inputnumber1.value = ""
-//     }
-//     else if(inputnumber1.value == 2){
-//          let createO = document.createElement("i");
-//          createO.className = "fa-regular fa-circle";
-//          pbox2.appendChild(createO);
-//          inputnumber1.value = "";
-        
-
-//     }
-//     else if (inputnumber1.value == 3) {
-//       let createO = document.createElement("i");createO.className = "fa-regular fa-circle";
-//       pbox3.appendChild(createO);
-//       inputnumber1.value = "";
-//     }
-//     else if (inputnumber1.value == 4) {
-//       let createO = document.createElement("i");
-//       createO.className = "fa-regular fa-circle";
-//       pbox4.appendChild(createO);
-//       inputnumber1.value = "";
-//     } 
-//     else if (inputnumber1.value == 5) {
-//       let createO = document.createElement("i");
-//       createO.className = "fa-regular fa-circle";
-//       pbox5.appendChild(createO);
-//       inputnumber1.value = "";
-//     } 
-//     else if (inputnumber1.value == 6) {
-//       let createO = document.createElement("i");
-//       createO.className = "fa-regular fa-circle";
-//       pbox6.appendChild(createO);
-//       inputnumber1.value = "";
-//     } 
-//     else if (inputnumber1.value == 7) {
-//       let createO = document.createElement("i");
-//       createO.className = "fa-regular fa-circle";
-//       pbox7.appendChild(createO);
-//       inputnumber1.value = "";
-//     } 
-//     else if (inputnumber1.value == 8) {
-//       let createO = document.createElement("i");
-//       createO.className = "fa-regular fa-circle";
-//       pbox8.appendChild(createO);
-//       inputnumber1.value = "";
-//     }
-//     else if (inputnumber1.value == 9) {
-//       let createO = document.createElement("i");
-//       createO.className = "fa-regular fa-circle";
-//       pbox9.appendChild(createO);
-//       inputnumber1.value = "";
-//     } 
-//     else {
-//       console.log("halo");
-//     }
-// })
-
-
-// gobtn2.addEventListener("click", function () {
-//   if (inputnumber2.value == 1) {
-//     let createX = document.createElement("i");
-//     createX.className = "fa-solid fa-xmark";
-//     pbox1.appendChild(createX);
-//     inputnumber2.value = "";
-//   } 
-//   else if (inputnumber2.value == 2) {
-//     let createX = document.createElement("i");
-//     createX.className = "fa-solid fa-xmark";
-//     pbox2.appendChild(createX);
-//     inputnumber2.value = "";
-//   } else if (inputnumber2.value == 3) {
-//     let createX = document.createElement("i");
-//     createX.className = "fa-solid fa-xmark";
-//     pbox3.appendChild(createX);
-//     inputnumber2.value = "";
-//   } else if (inputnumber2.value == 4) {
-//     let createX = document.createElement("i");
-//     createX.className = "fa-solid fa-xmark";
-//     pbox4.appendChild(createX);
-//     inputnumber2.value = "";
-//   } else if (inputnumber2.value == 5) {
-//     let createX = document.createElement("i");
-//     createX.className = "fa-solid fa-xmark";
-//     pbox5.appendChild(createX);
-//     inputnumber2.value = "";
-//   } else if (inputnumber2.value == 6) {
-//     let createX = document.createElement("i");
-//     createX.className = "fa-solid fa-xmark";
-//     pbox6.appendChild(createX);
-//     inputnumber2.value = "";
-//   } else if (inputnumber2.value == 7) {
-//     let createX = document.createElement("i");
-//     createX.className = "fa-solid fa-xmark";
-//     pbox7.appendChild(createX);
-//     inputnumber2.value = "";
-//   } else if (inputnumber2.value == 8) {
-//     let createX = document.createElement("i");
-//     createX.className = "fa-solid fa-xmark";
-//     pbox8.appendChild(createX);
-//     inputnumber2.value = "";
-//   } else if (inputnumber2.value == 9) {
-//     let createX = document.createElement("i");
-//     createX.className = "fa-solid fa-xmark";
-//     pbox9.appendChild(createX);
-//     inputnumber2.value = "";
-//   } 
-//   else {
-//     console.log("halo");
-//   }
-// });
 
 

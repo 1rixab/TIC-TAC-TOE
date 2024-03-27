@@ -89,3 +89,9 @@ html,body{
     position: absolute;
     left: 120px;
 }
+
+.btnes{
+    width: 10vh;
+    height: 10vh;
+    display: none;
+}
