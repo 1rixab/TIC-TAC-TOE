@@ -9,8 +9,9 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
-#maindiv{
+/* #maindiv{
     width: 90%;
     height: 90%;
     background-color: wheat;
@@ -20,7 +21,7 @@ html,body{
     align-items: center;
     border: 5px solid royalblue;
 
-}
+} */
 #cont1{
     width: 100%;
     height: 170px;
@@ -30,8 +31,8 @@ html,body{
 }
 #cont2grid{
     display: grid;
-    grid-template-columns: 130px 130px 130px;
-    grid-template-rows: 130px 130px 130px;
+    grid-template-columns: 110px 110px 110px;
+    grid-template-rows: 110px 110px 110px;
     row-gap: 15px;
     column-gap: 15px;
     margin: 20px 0 0 0;
@@ -94,4 +95,10 @@ html,body{
     width: 10vh;
     height: 10vh;
     display: none;
+}
+.textt{
+    color: wheat;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 5vh;
+    font-style: italic;
 }
