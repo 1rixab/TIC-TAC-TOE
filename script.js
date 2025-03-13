@@ -17,12 +17,18 @@ let bton6 = document.getElementById("btnp6");
 let bton7 = document.getElementById("btnp7");
 let bton8 = document.getElementById("btnp8");
 let bton9 = document.getElementById("btnp9");
+let refreshbtn = document.getElementById("playagainbtn");
 let buttonsele = document.querySelectorAll(".btnes");
 let result = document.getElementById("resultmsg");
 let flag = "";
 let gamedata = [];
 let Owin = "O WINNER!!!";
 let Xwin = "X WINNER!!!";
+ 
+refreshbtn.addEventListener("click", () => {
+  location.reload();
+})
+
 
 let printResult = (statement) => {
   result.innerText = statement;
